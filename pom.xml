@@ -18,6 +18,7 @@
 	</properties>
 
 	<modules>
+		<module>spring-ms-commons</module>
 		<module>spring-ms-productcatalog</module>
 	</modules>
 
