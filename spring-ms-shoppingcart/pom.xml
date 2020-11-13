@@ -12,15 +12,14 @@
 		<artifactId>spring-microservices</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>spring-ms-commons</artifactId>
-	<name>spring-ms-commons</name>
+	<!-- <groupId>pt.sample.microservices</groupId> -->
+	<artifactId>spring-ms-shoppingcart</artifactId>
+	<!-- <version>0.0.1-SNAPSHOT</version> -->
+	<name>spring-ms-shoppingcart</name>
 	<description>Demo project for Spring Boot</description>
-	<packaging>jar</packaging>
 
 	<properties>
-		<!-- <java.version>1.8</java.version> -->
-		<!-- <maven.compiler.source>1.8</maven.compiler.source> -->
-		<!-- <maven.compiler.target>1.8</maven.compiler.target> -->
+		<java.version>1.8</java.version>
 	</properties>
 
 	<dependencies>
@@ -35,7 +34,8 @@
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-configuration-processor</artifactId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
 			<optional>true</optional>
 		</dependency>
 		<dependency>
@@ -54,25 +54,20 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+
+		<dependency>
+			<groupId>pt.sample.microservices</groupId>
+			<artifactId>spring-ms-commons</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
 	</dependencies>
 
-	<!-- 	 
-		Solve the following compilation error: org.apache.maven.plugin.compiler.CompilationFailureException: 
-		Compilation failure (...)/spring-microservices/spring-ms-shoppingcart/src/main/java/pt/sample/ms/shoppingcart/SpringMsShoppingcartApplication.java:[6,35] 
-		package pt.sample.ms.commons.entity does not exist 
-		
-		https://stackoverflow.com/questions/45479060/spring-boot-package-does-not-exist-error 
-		https://docs.spring.io/spring-boot/docs/1.5.6.RELEASE/reference/htmlsingle/#howto-create-an-additional-executable-jar 
-		
-		-->
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<classifier>exec</classifier>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>

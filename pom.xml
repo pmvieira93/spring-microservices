@@ -6,6 +6,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.3.5.RELEASE</version>
+		<relativePath/>
 	</parent>
 	<groupId>pt.sample.microservices</groupId>
 	<artifactId>spring-microservices</artifactId>
@@ -15,11 +16,16 @@
 
 	<properties>
 		<java.version>1.8</java.version>
+		<maven.test.skip>true</maven.test.skip>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
 
 	<modules>
 		<module>spring-ms-commons</module>
 		<module>spring-ms-productcatalog</module>
+		<module>spring-ms-shoppingcart</module>
+		<module>spring-ms-configserver</module>
 	</modules>
 
 	<build>
