@@ -26,6 +26,8 @@
 		<module>spring-ms-productcatalog</module>
 		<module>spring-ms-shoppingcart</module>
 		<module>spring-ms-configserver</module>
+		<module>spring-ms-discoveryserver</module>
+		<module>spring-ms-zuulproxyserver</module>
 	</modules>
 
 	<build>
