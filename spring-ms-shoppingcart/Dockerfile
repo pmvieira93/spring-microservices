@@ -8,8 +8,8 @@ FROM openjdk:8
 #		/{company/domain}/{name}/{type}		| type=[api,app,webapp,batch]
 WORKDIR /company/microservices/api
 
-ADD target/spring-ms-productcatalog-0.0.1-SNAPSHOT.jar spring-ms-productcatalog-0.0.1-SNAPSHOT.jar
+ADD target/spring-ms-shoppingcart-0.0.1-SNAPSHOT.jar spring-ms-shoppingcart-0.0.1-SNAPSHOT.jar
 
-EXPOSE 8080 8081 8082
+EXPOSE 8083 8084 8085
 
-ENTRYPOINT ["java", "-jar", "spring-ms-productcatalog-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-jar", "spring-ms-shoppingcart-0.0.1-SNAPSHOT.jar"]

@@ -45,7 +45,7 @@ public class ShoppingCartController {
 	public Cart addItemByZuul(@PathVariable String cartId, @RequestBody CartItem item) {
 		if (cartId != null && item != null && item.getProductId() != null) {
 
-			String productCatalogUrl = "http://localhost:8762/product_catalog/product/" + item.getProductId();
+			String productCatalogUrl = "http://localhost:8762/ms-product-catalog/product/" + item.getProductId();
 
 			// get product details
 			Product itemProduct = restTemplate.getForObject(productCatalogUrl, Product.class);

@@ -1,5 +1,5 @@
 zuul:
  routes:
   product:
-   path: /product_catalog/**
-   serviceId: product_catalog
+   path: /ms-product-catalog/**
+   serviceId: ms-product-catalog
