@@ -2,6 +2,8 @@ package pt.sample.ms.productcatalog.controller;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
@@ -22,6 +24,8 @@ import pt.sample.ms.commons.entity.Product;
 @RefreshScope
 public class ProductCatalogController {
 
+	private Logger logger = LoggerFactory.getLogger(ProductCatalogController.class);
+
 	@Autowired
 	private MongoTemplate mongoTemplate;
 
@@ -40,7 +44,14 @@ public class ProductCatalogController {
 
 	@GetMapping("/product/{id}")
 	public Product getProductDetails(@PathVariable String id) {
-		return mongoTemplate.findById(id, Product.class);
+		logger.info("get product details - process started");
+		Product product = mongoTemplate.findById(id, Product.class);
+		if (product != null)
+			logger.info("get product details - product found");
+		else
+			logger.info("get product details - product not found");
+
+		return product;
 	}
 
 	@DeleteMapping("/product/{id}")
@@ -53,12 +64,12 @@ public class ProductCatalogController {
 
 	@GetMapping("/product")
 	public List<Product> getProductList() {
-	    System.out.println("getting product list sorted by " + defaultSortCol);
-	    Query query = new Query();
-	    query.with(Sort.by(Sort.Direction.ASC, defaultSortCol));
+		System.out.println("getting product list sorted by " + defaultSortCol);
+		Query query = new Query();
+		query.with(Sort.by(Sort.Direction.ASC, defaultSortCol));
 //		return mongoTemplate.findAll(Product.class);
-	    
-	    return mongoTemplate.find(query,Product.class);
+
+		return mongoTemplate.find(query, Product.class);
 	}
 
 }

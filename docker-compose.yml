@@ -24,7 +24,7 @@ services:
   productcatalog:
     image: openjdk:8
     network_mode: microservices
-    container_name: ms-productcatalog
+    container_name: ms-product-catalog
     expose:
       - 8081
     ports:

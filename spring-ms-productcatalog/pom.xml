@@ -85,15 +85,40 @@
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 
+		<!-- Service Discovery -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
+
+		<!-- Distributed Tracing -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-sleuth</artifactId>
+		</dependency>
+		
+		<!-- Enabling Tracing System
+		
+			Get App from:	
+				curl -sSL https://zipkin.io/quickstart.sh | bash -s
+			Run App:	
+				java -jar zipkin.jar
+			Default Web Host:	
+				http://localhost:9411/
+			Config Each 'Distributed Tracing':	
+				application.properties	>	
+					spring.zipkin.baseUrl=http://sample-hostname:sample-port/
+		 -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-sleuth-zipkin</artifactId>
 		</dependency>
 
 	</dependencies>
 
 	<dependencyManagement>
 		<dependencies>
+			<!-- Service Discovery -->
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>
