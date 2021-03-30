@@ -10,6 +10,6 @@ WORKDIR /company/microservices/api
 
 ADD target/spring-ms-productcatalog-0.0.1-SNAPSHOT.jar spring-ms-productcatalog-0.0.1-SNAPSHOT.jar
 
-EXPOSE 8080 8081 8082
+EXPOSE 8084
 
 ENTRYPOINT ["java", "-jar", "spring-ms-productcatalog-0.0.1-SNAPSHOT.jar"]

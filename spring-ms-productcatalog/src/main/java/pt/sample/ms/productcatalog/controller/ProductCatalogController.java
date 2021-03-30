@@ -72,4 +72,13 @@ public class ProductCatalogController {
 		return mongoTemplate.find(query, Product.class);
 	}
 
+	/**
+	 * API Gateway - Troubleshooting
+	 * 
+	 * @return
+	 */
+	@GetMapping("/product/version")
+	public String getVersionInfo() {
+		return "Version - V1";
+	}
 }

@@ -28,6 +28,7 @@
 		<module>spring-ms-configserver</module>
 		<module>spring-ms-discoveryserver</module>
 		<module>spring-ms-zuulproxyserver</module>
+		<module>spring-ms-apigateway</module>
 	</modules>
 
 	<build>

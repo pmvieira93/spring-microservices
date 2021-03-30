@@ -12,6 +12,7 @@
 		<artifactId>spring-microservices</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
+	
 	<artifactId>spring-ms-configserver</artifactId>
 	<name>spring-ms-configserver</name>
 	<description>Demo project for Spring Boot</description>
